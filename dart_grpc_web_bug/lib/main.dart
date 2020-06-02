@@ -42,6 +42,7 @@ class _DebugWidgetState extends State<DebugWidget> {
       var value = await client.increment(123);
       return "Normal return: ${value}";
     } catch (e) {
+      print("Error: ${e}");
       return "Error: ${e}";
     }
   }
