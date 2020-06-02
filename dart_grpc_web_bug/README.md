@@ -1,5 +1,7 @@
 # dartgrpcwebbug
 
+https://github.com/grpc/grpc-dart/issues/312
+
 This program reproduces a "gRPC Error (14, XhrConnection connection-error)" error in the
 Dart gRPC web implementation.
 
