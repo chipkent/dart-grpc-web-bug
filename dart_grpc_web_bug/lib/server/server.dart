@@ -4,6 +4,7 @@ import 'package:grpc/grpc.dart';
 class TestService extends TestServiceBase {
   @override
   Future<TestResponse> increment(ServiceCall call, TestRequest request) async {
+    print("increment(${request})");
     return TestResponse()..val = request.val + 1;
   }
 }

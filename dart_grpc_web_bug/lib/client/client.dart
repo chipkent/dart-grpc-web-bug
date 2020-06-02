@@ -26,7 +26,6 @@ class GRPCClient {
 
   Future<TestResponse> increment(int val) async {
     var request = TestRequest()..val = val;
-
     return await client.increment(request);
   }
 }
