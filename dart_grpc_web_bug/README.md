@@ -11,4 +11,4 @@ To reproduce the problem:
 2) In "main.dart", replace the IP address in _getMsg() with the IP address of the machine running the server.
 3) In Android Studio, run "main.dart".
 3a) If "main.dart" is run on an Android device, there are no problems.
-3b) If "main.dart" is run on Chrome, the error occurs.
+3b) If "main.dart" is run on Chrome, the error occurs.  (You may need to refresh the web page)
