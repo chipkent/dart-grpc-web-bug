@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package dbggrpc;
+
+service TestService {
+    rpc Increment(TestRequest) returns (TestResponse);
+}
+
+message TestRequest {
+    int32 val = 1;
+}
+
+message TestResponse {
+    int32 val = 1;
+}
