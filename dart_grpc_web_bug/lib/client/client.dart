@@ -1,24 +1,14 @@
 import 'package:dartgrpcwebbug/dbggrpc/dbggrpc.pbgrpc.dart';
-import 'package:universal_platform/universal_platform.dart' show UniversalPlatform;
-import 'package:grpc/grpc.dart';
-import 'package:grpc/grpc_web.dart';
+import 'clientchannel_base.dart'
+  if(dart.library.io) 'clientchannel_android.dart'
+  if(dart.library.js) 'clientchannel_web.dart';
 
 class GRPCClient {
   var _channel;
   TestServiceClient client;
 
   GRPCClient(String host, int port) {
-    if (UniversalPlatform.isWeb) {
-      // https://github.com/grpc/grpc-dart/issues/264
-      _channel = GrpcWebClientChannel.xhr(Uri.parse('http://${host}:${port}'));
-    } else {
-      _channel = ClientChannel(
-        host,
-        port: port,
-        options: const ChannelOptions(credentials: ChannelCredentials.insecure()),
-      );
-    }
-
+    _channel = createClientChannel(host,port);
     client = TestServiceClient(_channel);
   }
 

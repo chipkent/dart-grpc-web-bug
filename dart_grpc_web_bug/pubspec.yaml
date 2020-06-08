@@ -35,7 +35,8 @@ dependencies:
     git:
       url: https://github.com/grpc/grpc-dart.git
       # Need this bug fix:  https://github.com/grpc/grpc-dart/pull/287
-      ref: c513e1467f21e498385f4aefa7e370601263034e
+#      ref: c513e1467f21e498385f4aefa7e370601263034e
+      ref: 39c751128cff276374e5e23057136f4e0c18018c
   universal_platform: 0.1.3
 
 dev_dependencies:
